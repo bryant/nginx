@@ -286,8 +286,6 @@ ngx_http_header_filter(ngx_http_request_t *r)
         } else if (clcf->server_tokens == NGX_HTTP_SERVER_TOKENS_BUILD) {
             len += sizeof(ngx_http_server_build_string) - 1;
 
-        } else {
-            len += sizeof(ngx_http_server_string) - 1;
         }
     }
 
@@ -459,7 +457,7 @@ ngx_http_header_filter(ngx_http_request_t *r)
 
         } else {
             p = ngx_http_server_string;
-            len = sizeof(ngx_http_server_string) - 1;
+            len = 0;
         }
 
         b->last = ngx_cpymem(b->last, p, len);

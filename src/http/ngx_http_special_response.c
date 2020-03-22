@@ -33,7 +33,6 @@ static u_char ngx_http_error_build_tail[] =
 
 
 static u_char ngx_http_error_tail[] =
-"<hr><center>nginx</center>" CRLF
 "</body>" CRLF
 "</html>" CRLF
 ;
