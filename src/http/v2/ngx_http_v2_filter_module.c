@@ -258,17 +258,6 @@ ngx_http_v2_header_filter(ngx_http_request_t *r)
 
     clcf = ngx_http_get_module_loc_conf(r, ngx_http_core_module);
 
-    if (r->headers_out.server == NULL) {
-
-        if (clcf->server_tokens == NGX_HTTP_SERVER_TOKENS_ON) {
-            len += 1 + nginx_ver_len;
-
-        } else if (clcf->server_tokens == NGX_HTTP_SERVER_TOKENS_BUILD) {
-            len += 1 + nginx_ver_build_len;
-
-        }
-    }
-
     if (r->headers_out.date == NULL) {
         len += 1 + ngx_http_v2_literal_size("Wed, 31 Dec 1986 18:00:00 GMT");
     }
